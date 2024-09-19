@@ -2,10 +2,9 @@ import express from "express";
 import cors from "cors";
 import dotenv from "dotenv";
 dotenv.config();
-// IMPORT OUR DB!
+
 import { db } from "./util/FirebaseInit.js";
-// IMPORT FIREBASE FUNCTIONS!
-import { collection, getDocs } from "firebase/firestore";
+import { collection, getDocs, addDoc, deleteDoc, doc } from "firebase/firestore";
 
 const app = express();
 const port = 8080;
@@ -17,26 +16,47 @@ app.use(
     }) // specify we're using cors for frontend
 );
 
-
-app.get("/", async(req, res) => {
-    res.send("Hello world!")
+// Get all tasks
+app.get("/tasks", async(req, res) => {
+    try {
+        const collectionRef = collection(db, "Tasks");
+        const collectionSnap = await getDocs(collectionRef);
+        const tasks = [];
+        collectionSnap.forEach((task) => {
+            task.push(task.data());
+        res.json(tasks);
+        })
+    } catch (error) {
+        res.status(500).json({error: "Error fetching tasks"});
+    }
 });
 
-app.get("/students", async(req, res) => {
-    // Get a reference to the collection "Students"
-    const collectionRef = collection(db, "Students");
-    // Get all documents from the collection
-    const collectionSnap = await getDocs(collectionRef);
-    // Make a list of those documents
-    const docs = []
-    collectionSnap.forEach((doc) => {
-        docs.push(doc.data());
-    });
-    // Return them
-    res.send(docs);
+// Add a new task
+app.post("/tasks", async (req, res) => {
+    try {
+        const { name } = req.body;
+        if (!name) {
+            return res.status(400).json({ error: "Task name is required" });
+          }
+          await addDoc(collection(db, "Tasks"), { name });
+          res.status(201).json({ message: "Task added successfully" });
+        } catch (error) {
+          res.status(500).json({ error: "Error adding task" });
+    }
 });
+
+// Delete a task
+app.delete("/tasks/:id", async (req, res) => {
+    try {
+      const taskId = req.params.id;
+      await deleteDoc(doc(db, "Tasks", taskId));
+      res.status(200).json({ message: "Task deleted successfully" });
+    } catch (error) {
+      res.status(500).json({ error: "Error deleting task" });
+    }
+  });
 
 // STARTS THE PROGRAM
 app.listen(port, () => {
-    console.log("Listening on port", port);
-}); // listen for incoming traffic
+    console.log("Server running on port", port);
+});
