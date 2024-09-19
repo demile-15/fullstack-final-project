@@ -23,9 +23,9 @@ app.get("/tasks", async(req, res) => {
         const collectionSnap = await getDocs(collectionRef);
         const tasks = [];
         collectionSnap.forEach((task) => {
-            task.push(task.data());
-        res.json(tasks);
+            tasks.push({ id: task.id, ...task.data() });
         })
+        res.json(tasks);
     } catch (error) {
         res.status(500).json({error: "Error fetching tasks"});
     }

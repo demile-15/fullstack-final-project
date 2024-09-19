@@ -1,8 +1,4 @@
-# FSAB Bootcamp 24 Frontend Template
+# To-Do List App Frontend
 
-## How to use this repo
+Frontend implemented with Next.js
 
-- Checkout to the branch of your choosing with `git checkout <branchName>` followed by `git pull`. If you're switching to a new branch, run `npm i`. To run the frontend, run `npm run dev` and navigate to [http://localhost:3000](http://localhost:3000)
-- Branch options:
-  - `main` (default): A polished version from the React/NextJS Bootcamp Day
-  - `integration-starter`: Begins work on integration; You can find functionality in `app/students/page.js` and check out [http://localhost:3000](http://localhost:3000)
