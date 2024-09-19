@@ -1,0 +1,114 @@
+/*!************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[3].use[1]!./node_modules/next/dist/build/webpack/loaders/next-font-loader/index.js??ruleSet[1].rules[13].oneOf[3].use[2]!./node_modules/next/font/local/target.css?{"path":"app/layout.js","import":"","arguments":[{"src":"./fonts/GeistVF.woff","variable":"--font-geist-sans","weight":"100 900"}],"variableName":"geistSans"} ***!
+  \************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+@font-face {
+font-family: '__geistSans_1e4310';
+src: url(/_next/static/media/4473ecc91f70f139-s.p.woff) format('woff');
+font-display: swap;
+font-weight: 100 900;
+}@font-face {font-family: '__geistSans_Fallback_1e4310';src: local("Arial");ascent-override: 85.83%;descent-override: 20.52%;line-gap-override: 9.33%;size-adjust: 107.19%
+}.__className_1e4310 {font-family: '__geistSans_1e4310', '__geistSans_Fallback_1e4310'
+}.__variable_1e4310 {--font-geist-sans: '__geistSans_1e4310', '__geistSans_Fallback_1e4310'
+}
+
+/*!****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[3].use[1]!./node_modules/next/dist/build/webpack/loaders/next-font-loader/index.js??ruleSet[1].rules[13].oneOf[3].use[2]!./node_modules/next/font/local/target.css?{"path":"app/layout.js","import":"","arguments":[{"src":"./fonts/GeistMonoVF.woff","variable":"--font-geist-mono","weight":"100 900"}],"variableName":"geistMono"} ***!
+  \****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+@font-face {
+font-family: '__geistMono_c3aa02';
+src: url(/_next/static/media/463dafcda517f24f-s.p.woff) format('woff');
+font-display: swap;
+font-weight: 100 900;
+}@font-face {font-family: '__geistMono_Fallback_c3aa02';src: local("Arial");ascent-override: 69.97%;descent-override: 16.73%;line-gap-override: 7.61%;size-adjust: 131.49%
+}.__className_c3aa02 {font-family: '__geistMono_c3aa02', '__geistMono_Fallback_c3aa02'
+}.__variable_c3aa02 {--font-geist-mono: '__geistMono_c3aa02', '__geistMono_Fallback_c3aa02'
+}
+
+/*!*************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[12].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[12].use[3]!./app/globals.css ***!
+  \*************************************************************************************************************************************************************************************************************************************************************/
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+.container {
+    width: 100%;
+    min-width: 100vh;
+    background: linear-gradient(135deg, #ffc8bd, #e6dacb);
+    padding: 10px;
+}
+.todo-app {
+    width: 100%;
+    max-width: 540px;
+    background: #fff;
+    margin: 100px auto 20px;
+    padding: 40px 30 px 70px;
+    border-radius: 10px;
+}
+.todo-app h2 {
+    color: #002765;
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.todo-app h2 img {
+    width: 30px;
+    margin-left: 10px;
+}
+.row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #edeef0;
+    border-radius: 30px;
+    padding-left: 20px;
+    margin-bottom: 25px;
+}
+input {
+    flex: 1 1;
+    border: none;
+    outline: none;
+    background: transparent;
+    padding: 10px;
+}
+button {
+    border: none;
+    outline: none;
+    padding: 16px 50px;
+    background: #ff5945;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 40px;
+}
+ul li {
+    list-style: none;
+    font-size: 17px;
+    padding: 12px 8px 12px 50px;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+            user-select: none;
+    cursor: pointer;
+    position: relative;
+}
+ul li::before {
+    content: "";
+    position: absolute;
+    height: 28px;
+    width: 28px;
+    border-radius: 50%;
+    background-image: url(/_next/static/media/unchecked.bed6b222.png);
+    background-size: cover;
+    background-position: center;
+    top: 8px;
+    left: 10px;
+}
+ul li.checked {
+    color: #555;
+    text-decoration: line-through;
+}
+ul li.checked::before {
+    background-image: url(/_next/static/media/checked.svg.dc851314.png);
+}
